@@ -46,12 +46,12 @@ static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "|||",      col },
+	{ "tile",      tile },    /* first entry is default */
+	{ "mono",      monocle },
+	{ "cmaster",      centeredmaster },
+	{ "cfloat",      centeredfloatingmaster },
+	{ "col",      col },
+	{ "float",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
 
@@ -88,8 +88,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} }, /**/
 	{ ALTKEY,                       XK_w,      killclient,     {0} }, /**/
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	/*{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },*/ /* supposed to be floating */
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[5]} },
