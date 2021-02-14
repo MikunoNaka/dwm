@@ -90,7 +90,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	/*{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },*/ /* supposed to be floating */
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
+/*	{ MODKEY,             XK_f,      fullscreen,     {0} }, the fullscreen shit is acring weird*/
+	/* mod-f is conflicting (assigned to 3 functions!)
+	 * TODO: fix this shit, also why did i add 2 fullscreen patches */
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[5]} },
@@ -98,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  cyclelayout,    {.i = +1 } },
 /*	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} }, */
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} }, /**/
+/*	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },  wtf did i do*/
 /*	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },	*/
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
